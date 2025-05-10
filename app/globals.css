@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Font Setup */
+:root {
+  --font-sans: 'Space Grotesk', sans-serif;
+  font-family: var(--font-sans);
+
+  --radius: 0.625rem;
+
+  --background: #edf1ff;
+  --foreground: #0d111b;
+
+  --card: #f3f5fc;
+  --card-foreground: #03001C;
+
+  --popover: #ffffff;
+  --popover-foreground: #03001C;
+
+  --primary: #89cbfa;
+  --primary-foreground: #ffffff;
+
+  --secondary: #63c7f5;
+  --secondary-foreground: #364080;
+
+  --muted: #e4ebf7;
+  --muted-foreground: #6b7a99;
+
+  --accent: #63c7f5;
+  --accent-foreground: #1a1a33;
+
+  --destructive: #ff5c5c;
+  --border: #d8dce9;
+  --input: #d8dce9;
+  --ring: #579edc;
+
+  --title: #579edc;
+  --description: #10003e;
+  --grid: #e1ecfe;
+}
+
+.dark {
+  --background: #0d111b;
+  --foreground: #edf1ff;
+
+  --card: #1a1f2e;
+  --card-foreground: #edf1ff;
+
+  --popover: #202535;
+  --popover-foreground: #edf1ff;
+
+  --primary: #0d2a39;
+  --primary-foreground: #11131f;
+
+  --secondary: #404b66;
+  --secondary-foreground: #edf1ff;
+
+  --muted: #404b66;
+  --muted-foreground: #9cb1d9;
+
+  --accent: #63c7f5; 
+  --accent-foreground: #edf1ff;
+
+  --destructive: #ff4d4f;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.16);
+  --ring: #4d9fe2;
+
+  --title: #B7E0FF;
+  --description: #B6EADA;
+
+  --grid: #0e0f11;
+}
+
+.text-title {
+  color: var(--title)
+}
+
+.text-description {
+  color: var(--description)
+}
+
+.text-primary {
+  color: var(--foreground);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-card {
+  color: var(--grid);
+}
+.bg-primary {
+  background-color: var(--background);
+}
+.bg-secondary {
+  background-color: var(--foreground);
+}
+
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: var(--radius);
+}
+
+.popover {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+}
+
+/* === Background Grid Example === */
+.bg-grid {
+  background-image: var(--grid);
+  background-size: 6rem 4rem;
+}
+
+/* === Animations === */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+@keyframes shimmer {
+  0% { background-position: 0 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes moveHorizontal {
+  0% { transform: translateX(-50%) translateY(-10%); }
+  50% { transform: translateX(50%) translateY(10%); }
+  100% { transform: translateX(-50%) translateY(-10%); }
+}
+@keyframes moveVertical {
+  0% { transform: translateY(-50%); }
+  50% { transform: translateY(50%); }
+  100% { transform: translateY(-50%); }
+}
+
+.animate-spotlight {
+  animation: spotlight 2s ease 0.75s 1 forwards;
+}
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+.animate-horizontal {
+  animation: moveHorizontal 40s ease infinite;
+}
+.animate-vertical {
+  animation: moveVertical 30s ease infinite;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@theme {
+  --breakpoint-xs: 20rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+}
+
+@keyframes slide-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card{
+    view-timeline-name: --item-timeline;
+    animation: slide-fade-in both;
+    animation-timeline: --item-timeline;
+    animation-range: contain 0% contain 100%;
+  }
+}
+
+@theme inline {
+  --animate-first: moveVertical 30s ease infinite;
+  --animate-second: moveInCircle 20s reverse infinite;
+  --animate-third: moveInCircle 40s linear infinite;
+  --animate-fourth: moveHorizontal 40s ease infinite;
+  --animate-fifth: moveInCircle 20s ease infinite;
+ 
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+ 
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+ 
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+}
