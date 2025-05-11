@@ -48,7 +48,7 @@ const Header = () => {
           <div className='flex justify-between items-center gap-10'>
             <Link href="/">
               <div className='rounded-sm overflow-hidden'>
-                <Image src={"/logo.png"} alt="Logo" height={80} width={80} />
+                <Image src={"/Logo.png"} alt="Logo" height={80} width={80} />
               </div>
             </Link>
 
