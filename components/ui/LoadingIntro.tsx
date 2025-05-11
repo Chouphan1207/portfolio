@@ -22,12 +22,15 @@ const LoadingIntro = () => {
           clearInterval(timer)
           setIsCompleted(true)
 
+          // ✅ Immediately mark loading as done
+          markLoadingDone()
+
+          // Continue backdrop and exit animations
           setTimeout(() => {
             setBackdropCompleted(true)
 
             setTimeout(() => {
               setFullyDone(true)
-              markLoadingDone() 
             }, 700)
           }, 500)
 
@@ -61,7 +64,7 @@ const LoadingIntro = () => {
           Inspirux is loading...
         </div>
 
-        <div className="absolute right-4 bottom-6 text-white font-light text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[200px]">
+        <div className="absolute right-4 bottom-6 text-white font-light text-[180px]">
           {Math.round(progress)}%
         </div>
       </div>
