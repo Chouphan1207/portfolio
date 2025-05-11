@@ -17,7 +17,8 @@ interface Comment {
   username: string
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const params = await props.params;
   return {
     title: `Post ${params.id}`,
   }
@@ -29,8 +30,9 @@ const fetchPost = async (id: string) => {
   return postSnap.data()
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { id } = params
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
+  const { id } = await params;
   const post = await fetchPost(id)
 
   if (!post) return notFound()
