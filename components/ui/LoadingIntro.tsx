@@ -64,7 +64,7 @@ const LoadingIntro = () => {
           Inspirux is loading...
         </div>
 
-        <div className="absolute right-4 bottom-6 text-white font-light text-[180px]">
+        <div className="absolute right-4 bottom-6 text-white font-light text-[170px]">
           {Math.round(progress)}%
         </div>
       </div>
