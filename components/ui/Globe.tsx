@@ -6,7 +6,6 @@ import ThreeGlobe from 'three-globe'
 import { useThree, Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import countries from '@/components/data/globe.json'
-import { useFrame } from '@react-three/fiber'
 
 const RING_PROPAGATION_SPEED = 3
 const aspect = 1.2
@@ -161,7 +160,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .pointsData(filteredPoints)
-      .pointColor((d: any) => d.color)
+      .pointColor((d: object) => (d as Position).color)
       .pointsMerge(true)
       .pointAltitude(0.0)
       .pointRadius(2)
