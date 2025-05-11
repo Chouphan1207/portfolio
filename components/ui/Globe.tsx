@@ -9,7 +9,7 @@ import countries from '@/components/data/globe.json'
 
 declare module '@react-three/fiber' {
   interface ThreeElements {
-    threeGlobe: any
+    threeGlobe: React.ComponentProps<any>
   }
 }
 
