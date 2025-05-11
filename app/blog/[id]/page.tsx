@@ -8,11 +8,19 @@ import { IoChatbubbleEllipsesSharp, IoHeart, IoShare } from 'react-icons/io5'
 import { PostHeader } from '../Post'
 import { getDoc, doc } from 'firebase/firestore'
 import { db } from '@/firebase'
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 const fetchPost = async (id: string) => {
   const postRef = doc(db, "posts", id)
   const postSnap = await getDoc(postRef)
   return postSnap.data()
+}
+
+type Props = {
+  params: {
+    id: string
+  }
 }
 
 interface Comment {
@@ -21,10 +29,17 @@ interface Comment {
   username: string
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  return {
+    title: `Post ${params.id}`,
+  }
+}
+
 export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params
   const post = await fetchPost(id)
-  console.log(post)
+
+  if (!post) return notFound()
 
   return (
     <>
