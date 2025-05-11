@@ -1,19 +1,12 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Color, Scene, Fog, PerspectiveCamera, Vector3, Group } from 'three'
+import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from 'three'
 import ThreeGlobe from 'three-globe'
-import { useThree, Canvas, extend } from '@react-three/fiber'
+import { useThree, Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import countries from '@/components/data/globe.json'
-
-declare module '@react-three/fiber' {
-  interface ThreeElements {
-    threeGlobe: React.ComponentProps<any>
-  }
-}
-
-extend({ threeGlobe: ThreeGlobe })
+import { useFrame } from '@react-three/fiber'
 
 const RING_PROPAGATION_SPEED = 3
 const aspect = 1.2
@@ -62,10 +55,9 @@ interface WorldProps {
 
 export function Globe({ globeConfig, data }: WorldProps) {
   const globeRef = useRef<ThreeGlobe | null>(null)
-  const groupRef = useRef<Group>(null)
   const [isInitialized, setIsInitialized] = useState(false)
 
-  const defaultProps = useMemo(() => ({
+  const globeDefaults: Required<GlobeConfig> = {
     pointSize: 1,
     atmosphereColor: '#ffffff',
     showAtmosphere: true,
@@ -79,13 +71,23 @@ export function Globe({ globeConfig, data }: WorldProps) {
     arcLength: 0.9,
     rings: 1,
     maxRings: 3,
-    ...globeConfig,
-  }), [globeConfig])
+    initialPosition: { lat: 0, lng: 0 },
+    autoRotate: true,
+    autoRotateSpeed: 1,
+    ambientLight: '#ffffff',
+    directionalLeftLight: '#ffffff',
+    directionalTopLight: '#ffffff',
+    pointLight: '#ffffff',
+  }
+
+  const defaultProps = useMemo(
+    () => ({ ...globeDefaults, ...globeConfig }),
+    [globeConfig]
+  )
 
   useEffect(() => {
-    if (!globeRef.current && groupRef.current) {
+    if (!globeRef.current) {
       globeRef.current = new ThreeGlobe()
-      // groupRef.current.add(globeRef.current as unknown as any)
       setIsInitialized(true)
     }
   }, [])
@@ -155,7 +157,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcDashLength(defaultProps.arcLength)
       .arcDashInitialGap((d: object) => (d as Position).order)
       .arcDashGap(15)
-      .arcDashAnimateTime(() => defaultProps.arcTime);
+      .arcDashAnimateTime(() => defaultProps.arcTime)
 
     globeRef.current
       .pointsData(filteredPoints)
@@ -170,35 +172,36 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
       .ringRepeatPeriod(
-        (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings
+        defaultProps.rings && defaultProps.arcTime && defaultProps.arcLength
+          ? (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings
+          : 1000
       )
   }, [isInitialized, data, defaultProps])
 
   useEffect(() => {
     if (!globeRef.current || !isInitialized || !data) return
 
-    const interval = setInterval(() => {
+    const updateRings = () => {
       const newRingIndices = genRandomNumbers(
         0,
         data.length,
         Math.floor((data.length * 4) / 5)
       )
 
-      const ringsData = data
-        .filter((_d, i) => newRingIndices.includes(i))
-        .map((d) => ({
-          lat: d.startLat,
-          lng: d.startLng,
-          color: d.color,
-        }))
+      const ringsData = newRingIndices.map((i) => ({
+        lat: data[i].startLat,
+        lng: data[i].startLng,
+        color: data[i].color,
+      }))
 
       globeRef.current!.ringsData(ringsData)
-    }, 2000)
+    }
 
+    const interval = setInterval(updateRings, 2000)
     return () => clearInterval(interval)
-  }, [isInitialized, data, defaultProps])
+  }, [isInitialized, data])
 
-  return <group ref={groupRef} />
+  return <>{isInitialized && globeRef.current && <primitive object={globeRef.current} />}</>
 }
 
 export function WebGLRendererConfig() {
