@@ -22,12 +22,12 @@ interface PageProps {
 }
 
 interface Comment {
-    comment: {
-        name: string
-        text: string
-        username: string
-            }
+  name: string
+  text: string
+  username: string
 }
+
+
 
 export default async function page({params} : PageProps) {
     const { id } = params
@@ -78,16 +78,14 @@ export default async function page({params} : PageProps) {
                     <FaChartSimple className='w-[22px] h-[22px] cursor-not-allowed'/>
                     <IoShare className='w-[22px] h-[22px] cursor-not-allowed'/>
                 </div>
-                {
-                    post?.comments.map((comment: Comment, index: number) => (
-                    <Comment 
-                        key={index} 
-                        name={comment.comment.name} 
-                        username={comment.comment.username} 
-                        text={comment.comment.text} 
-                    />
-                    ))
-                }
+                {post?.comments.map((comment: Comment, index: number) => (
+                <Comment 
+                    key={index} 
+                    name={comment.name} 
+                    username={comment.username} 
+                    text={comment.text} 
+                />
+                ))}
 
 
             </div>
