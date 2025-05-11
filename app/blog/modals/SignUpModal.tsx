@@ -5,12 +5,10 @@ import { Modal } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 import { AppDispatch, RootState } from '@/redux/store'
 import { openSignUpModal, closeSignUpModal } from '@/redux/slices/modalSlice'
-import { EyeIcon } from 'lucide-react'
 import { FaEyeSlash, FaXmark } from 'react-icons/fa6'
 import { FaEye } from 'react-icons/fa'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { auth } from '@/firebase'
-import { sign } from 'crypto'
 import { signInUser } from '@/redux/slices/userSlice'
 
 

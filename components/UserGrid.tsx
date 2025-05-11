@@ -1,7 +1,7 @@
 'use client'
 
 import { auth } from '@/firebase'
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { signOut } from 'firebase/auth'
 import Image from 'next/image'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'

@@ -6,7 +6,7 @@ import { Globe } from "./GridGlobe";
 import { useState, useEffect, useRef } from "react";
 import animationData from '@/components/data/confetti.json';
 import dynamic from 'next/dynamic';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { useAnimation, useInView } from 'framer-motion';
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
 const LottieClient = dynamic(() => import('@/components/LottieClient'), { ssr: false });
@@ -59,7 +59,7 @@ export const BentoGridItem = ({
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-20px' });
   const controls = useAnimation();
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
   const resolvedImg = theme === "dark" && darkImg ? darkImg : img;
 
   const leftLists = ["ReactJS", "Flutter", "Typescript"];
@@ -76,18 +76,6 @@ export const BentoGridItem = ({
     }
   }, [inView, controls]);
 
-  const variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.25, 1, 0.5, 1],
-        delay: id * 0.01,
-      },
-    },
-  };
 
   const defaultOptions = {
     loop: copied,

@@ -1,9 +1,15 @@
-'use client';
+'use client'
 
-import Lottie from 'react-lottie';
+import Lottie, { Options } from 'react-lottie'
 
-const LottieClient = ({ options, height, width }: any) => {
-  return <Lottie options={options} height={height} width={width} />;
-};
+interface LottieClientProps {
+  options: Options
+  height?: number | string
+  width?: number | string
+}
 
-export default LottieClient;
+const LottieClient = ({ options, height, width }: LottieClientProps) => {
+  return <Lottie options={options} height={height} width={width} />
+}
+
+export default LottieClient
