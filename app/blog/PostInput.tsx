@@ -43,7 +43,7 @@ export default function PostInput({insideModal}: PostInputProps) {
                         comments: arrayUnion({
                                 name: user.name,
                                 username: user.username,
-                                text:"",
+                                text: text,
                         })
                 });
                 setText('')

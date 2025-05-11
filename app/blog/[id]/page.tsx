@@ -41,7 +41,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     <>
       <div className='min-h-screen text-primary max-w-[1400px] mx-auto flex pt-25 justify-center'>
         <div className='flex-grow max-w-2xl border-x border-gray-300 items-center justify-center'>
-          <div className='py-4 px-3 text-xl sm:text-3xl top-0 font-bold z-50 flex items-center sticky border-b border-gray-300'>
+          <div className='py-4 px-3 text-xl sm:text-3xl top-0 font-bold flex items-center sticky border-b border-gray-300'>
             <Link href="/blog">
               <FaArrowLeft className='w-5 h-5 mr-10' />
             </Link>
