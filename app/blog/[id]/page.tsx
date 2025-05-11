@@ -1,3 +1,5 @@
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import React from 'react'
 import Widgets from '../Widgets'
 import SignUpPrompt from '../SignUpPrompt'
@@ -8,20 +10,6 @@ import { IoChatbubbleEllipsesSharp, IoHeart, IoShare } from 'react-icons/io5'
 import { PostHeader } from '../Post'
 import { getDoc, doc } from 'firebase/firestore'
 import { db } from '@/firebase'
-import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-
-const fetchPost = async (id: string) => {
-  const postRef = doc(db, "posts", id)
-  const postSnap = await getDoc(postRef)
-  return postSnap.data()
-}
-
-type Props = {
-  params: {
-    id: string
-  }
-}
 
 interface Comment {
   name: string
@@ -29,13 +17,19 @@ interface Comment {
   username: string
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   return {
     title: `Post ${params.id}`,
   }
 }
 
-export default async function Page({ params }: Props) {
+const fetchPost = async (id: string) => {
+  const postRef = doc(db, 'posts', id)
+  const postSnap = await getDoc(postRef)
+  return postSnap.data()
+}
+
+export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params
   const post = await fetchPost(id)
 
@@ -63,10 +57,10 @@ export default async function Page({ params }: Props) {
                   className='w-11 h-11'
                 />
                 <div className='flex flex-col'>
-                  <span className='font-bold text-primary whitespace-nowrap overflow-hidden text-ellipsis inline-block max-w-[60px] min-[400px]:max-w-[100px] min-[500px]:max-w-[140px] sm:max-w-[160px]'>
+                  <span className='font-bold text-primary whitespace-nowrap overflow-hidden text-ellipsis inline-block max-w-[160px]'>
                     {post?.name}
                   </span>
-                  <span className='text-neutral-400 whitespace-nowrap overflow-hidden text-ellipsis inline-block max-w-[60px] min-[400px]:max-w-[100px] min-[500px]:max-w-[140px] sm:max-w-[160px]'>
+                  <span className='text-neutral-400 whitespace-nowrap overflow-hidden text-ellipsis inline-block max-w-[160px]'>
                     {post?.username}
                   </span>
                 </div>
