@@ -51,8 +51,7 @@ const Hero = () => {
               otherClasses="sm:mt-4"
               handleClick={() =>
                 window.open(
-                  "https://www.canva.com/design/DAFB3AWKGKk/rsaX88n3vN-pW5xCVlAMIw/edit?utm_content=DAFB3AWKGKk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-                  "_blank"
+                  "https://drive.google.com/file/d/16_KDCjM10A5jgRFTQKvMYIt_LVXsa6T2/view?usp=sharing"
                 )
               }
             />
