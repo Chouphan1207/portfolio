@@ -15,10 +15,8 @@ const fetchPost = async (id: string) => {
     return postSnap.data()
 }
 
-interface PageProps {
-    params: {
-        id: string
-    }
+type PageProps = {
+  params: { id: string }
 }
 
 interface Comment {
