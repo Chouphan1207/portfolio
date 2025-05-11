@@ -13,7 +13,7 @@ const Widgets = () => {
       </div>
       <div className='bg-[var(--input)] rounded-xl p-3'>
         <h1 className='text-xl font-bold mb-2'>
-          What's Happening?
+          What&apos;s Happening?
         </h1>
         <div className='flex flex-col py-3 space-y-0.5'>
           <div className='flex justify-between text-primary text-[13px]'>

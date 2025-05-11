@@ -15,7 +15,7 @@ export default function SignUpPrompt() {
     <div className='fixed w-full h-[80px] bg-[var(--muted-foreground)] bottom-0 flex justify-center items-center space-x-5 lg:justify-between lg:px-20 xl:px-40 2xl:px-80'>
         <div className='hidden md:flex flex-col text-[var(--background)]'>
             <span className='text-xl font-bold'>
-                Don't miss out on the latest updates!
+                Don&apos;t miss out on the latest updates!
             </span>
             <span>
                 Join the community and start sharing your own ideas today.

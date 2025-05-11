@@ -40,7 +40,7 @@ const Hero = () => {
             />
 
             <p className="text-center md:text-left max-w-2xl text-sm md:text-lg lg:text-2xl text-secondary-foreground tracking-wide mb-4 z-10">
-              Hi, I'm Tin, a Full-stack freshman based in Ho Chi Minh City, VietNam.
+              Hi, I&apos;m Tin, a Full-stack freshman based in Ho Chi Minh City, VietNam.
             </p>
 
             <a href="#about" className="w-full flex justify-center">

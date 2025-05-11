@@ -79,8 +79,13 @@ export default async function page({params} : PageProps) {
                     <IoShare className='w-[22px] h-[22px] cursor-not-allowed'/>
                 </div>
                 {
-                    post?.comments.map((comment: Comment) => (
-                        <Comment name={comment.comment.name} username={comment.comment.name} text={comment.comment.text}/>
+                    post?.comments.map((comment: Comment, index: number) => (
+                    <Comment 
+                        key={index} 
+                        name={comment.comment.name} 
+                        username={comment.comment.username} 
+                        text={comment.comment.text} 
+                    />
                     ))
                 }
 
