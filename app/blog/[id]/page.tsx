@@ -115,7 +115,7 @@ function Comment({ name, username, text }: CommentProps) {
         <IoHeart className='w-[22px] h-[22px] cursor-pointer hover:text-[#63c7f5] transition' />
         <FaChartSimple className='w-[22px] h-[22px] cursor-not-allowed' />
         <IoShare className='w-[22px] h-[22px] cursor-not-allowed' />
-      </div>
+      </div> 
     </div>
   )
 }
