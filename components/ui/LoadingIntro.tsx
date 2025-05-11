@@ -1,11 +1,14 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { useLoading } from '@/app/loading-context'
 
 const LoadingIntro = () => {
   const [progress, setProgress] = useState(0)
   const [isCompleted, setIsCompleted] = useState(false)
   const [backdropCompleted, setBackdropCompleted] = useState(false)
-  const [fullyDone, setFullyDone] = useState(false) // 🚨 new state
+  const [fullyDone, setFullyDone] = useState(false)
+
+  const { markLoadingDone } = useLoading()
 
   const loadingTime = 2000
   const intervalTime = 15
@@ -19,12 +22,13 @@ const LoadingIntro = () => {
           clearInterval(timer)
           setIsCompleted(true)
 
-          // Step 2: Blue backdrop starts after 500ms
           setTimeout(() => {
             setBackdropCompleted(true)
 
-            // Step 3: Wait for backdrop transition (700ms) to finish
-            setTimeout(() => setFullyDone(true), 700)
+            setTimeout(() => {
+              setFullyDone(true)
+              markLoadingDone() 
+            }, 700)
           }, 500)
 
           return 100
@@ -34,9 +38,9 @@ const LoadingIntro = () => {
     }, intervalTime)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [increment, markLoadingDone])
 
-  if (fullyDone) return null // 🚨 wait for everything to finish
+  if (fullyDone) return null
 
   return (
     <div className="fixed top-0 left-0 w-full h-full z-50 pointer-events-none">
