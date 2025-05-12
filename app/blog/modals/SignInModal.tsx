@@ -9,6 +9,7 @@ import { FaEyeSlash, FaXmark } from 'react-icons/fa6'
 import { FaEye } from 'react-icons/fa'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase'
+import MagicButton from '@/components/ui/MagicButton'
 
 
 export default function SignInModal() {
@@ -30,10 +31,13 @@ export default function SignInModal() {
     console.log(isOpen)
     return (
     <>
-    <button className='w-full h-[48px] md:w-[80px] md:h-[40px] border-2 border-[var(--background)] text-[var(--background)] rounded-full font-bold hover:bg-(--foreground) hover:bg-opacity-25 transition'
-        onClick={() => dispatch(openSignInModal())}>
+        <button
+        className="w-full h-[48px] md:w-[80px] md:h-[40px] bg-[var(--background)]/90 text-[var(--foreground)] rounded-3xl font-bold transition-transform duration-300 ease-in-out hover:bg-opacity-80 hover:scale-105 outline-none"
+        onClick={() => dispatch(openSignInModal())}
+        >
         Login
-    </button>
+        </button>
+
     <Modal
         open={isOpen}
         onClose={() => dispatch(closeSignInModal())}

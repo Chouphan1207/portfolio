@@ -63,7 +63,8 @@ export default function SignUpModal() {
       }, [])
     return (
     <>
-    <button className='w-full h-[48px] md:w-[80px] md:h-[40px] bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold hover:bg-[var(--background)] hover:bg-opacity-25 transition' 
+    <button 
+    className="w-full h-[48px] md:w-[80px] md:h-[40px] bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold transition-transform duration-300 ease-in-out hover:bg-opacity-80 hover:scale-105"
     onClick={() => dispatch(openSignUpModal())}
     >
         Sign Up

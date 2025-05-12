@@ -11,6 +11,7 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect';
 import { useTheme } from 'next-themes';
 import { WavyBackground } from './ui/WavyBackground';
 import InfiniteScrollTools from './ui/InfiniteScrolling';
+import SocialButtons from './ui/SocialButton';
 
 
 const Hero = () => {
@@ -43,16 +44,17 @@ const Hero = () => {
               Hi, I&apos;m Tin, a Full-stack freshman based in Ho Chi Minh City, VietNam.
             </p>
 
-            <a href="#about" className="w-full flex justify-center">
+            <div className="w-full flex flex-col md:flex-row justify-center items-center sm:space-x-0 ">
               <MagicButton
                 title="My Resumé"
                 icon={<FaFileSignature />}
                 position="right"
-                otherClasses="sm:mt-4"
+                otherClasses="group transition-transform duration-300 hover:scale-105"
                 handleClick={() => window.open(
                   "https://drive.google.com/file/d/16_KDCjM10A5jgRFTQKvMYIt_LVXsa6T2/view?usp=sharing"
                 )} />
-            </a>
+                <SocialButtons/>
+            </div> 
           </div>
 
           {/* Right Column: Portrait */}
