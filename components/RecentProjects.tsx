@@ -41,7 +41,7 @@ export function RecentProjects() {
       content: (
         <div>
           <p className="mb-8 text-sm font-normal text-description md:text-sm">
-            I&apos;ve reached a lot of milestones, including earning my Bachelor's degree in Web Development.
+            I&apos;ve reached a lot of milestones, including earning my Bachelor&apos;s degree in Web Development.
           </p>
           <p className="mb-8 text-sm font-normal text-description md:text-sm ">
             or getting a 7.0 IELTS degree.
