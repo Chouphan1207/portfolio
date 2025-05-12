@@ -9,7 +9,6 @@ import { FaEyeSlash, FaXmark } from 'react-icons/fa6'
 import { FaEye } from 'react-icons/fa'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '@/firebase'
-import MagicButton from '@/components/ui/MagicButton'
 
 
 export default function SignInModal() {
