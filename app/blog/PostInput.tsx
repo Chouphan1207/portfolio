@@ -57,7 +57,7 @@ export default function PostInput({insideModal}: PostInputProps) {
                         width={44}
                         height={44}
                         alt={insideModal ? "Profile Picture" : "Logo"}
-                        className='w-11 h-11 z-10 bg-white rounded-full'
+                        className='w-11 h-11 z-10 rounded-full'
                 />
 
                 <div className='w-full space-y-3'>

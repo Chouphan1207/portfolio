@@ -22,7 +22,7 @@ const Blogpage = () => {
         <Spotlight className=" -top-10 left-[80%] h-[80vh] w-[40vw]" fill="#0899ba" />
         <Spotlight className=" top-28 left-80 h-[80vh] w-[50vw]" fill="#1c558e" />
       </div>
-      <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-x-hidden">
+      <DraggableCardContainer className="relative flex min-h-screen w-screen items-center justify-center overflow-x-hidden">
           <p className="absolute top-90 mx-auto max-w-sm font-bold -translate-y-3/4 lg:ml-10 text-center text-7xl font-primary">
             Welcome to my Blog
           </p>
@@ -31,14 +31,14 @@ const Blogpage = () => {
             <img
             src={item.image}
             alt={item.title}
-            className="pointer-events-none relative z-10 h-80 w-80 object-cover"
+            className="pointer-events-none relative z-10 h-70 w-70 object-cover"
             />
             <h3 className="mt-4 text-center text-2xl font-bold text-card">
               {item.title}
             </h3>
           </DraggableCardBody>
         ))}
-          <div className=' min-h-screen w-full text-primary max-w-7xl mx-auto flex pt-180 justify-center'>
+          <div className=' min-h-screen w-full text-primary max-w-7xl mx-auto flex pt-150 pb-20 justify-center'>
             <PostFeed/>
             <Widgets/>
           </div>

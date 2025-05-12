@@ -44,7 +44,7 @@ const MobileNav = () => {
         <nav className="flex flex-col items-center justify-start h-full">
             <Link href="/">
               <div className='rounded-sm overflow-hidden'>
-                <Image src={"/logo.png"} alt="Logo" height={80} width={80} />
+                <Image src={"/Logo.png"} alt="Logo" height={80} width={80} />
               </div>
             </Link>
           {navLinks.map((link) => (
