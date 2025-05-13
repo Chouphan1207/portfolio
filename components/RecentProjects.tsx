@@ -103,7 +103,7 @@ export function RecentProjects() {
       content: (
         <div>
           <p className="mb-4 text-xl font-normal text-title">
-            With my military service nearing completion, I've been relearning web development and am currently exploring job opportunities to grow my career in tech.
+            With my military service nearing completion, I&apos;ve been relearning web development and am currently exploring job opportunities to grow my career in tech.
           </p>
 
 
