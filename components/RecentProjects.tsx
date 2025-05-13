@@ -6,13 +6,6 @@ import "keen-slider/keen-slider.min.css"
 
 
 export function RecentProjects() {
-    const [sliderRef] = useKeenSlider({
-    mode: "snap",
-    slides: {
-      perView: 2.5,
-      spacing: 16,
-    },
-  })
   const data = [
     {
       title: "Late 2022",
