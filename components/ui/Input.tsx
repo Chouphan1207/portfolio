@@ -1,5 +1,6 @@
 // Input component extends from shadcnui - https://ui.shadcn.com/docs/components/input
 "use client";
+
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { useMotionTemplate, useMotionValue, motion } from "motion/react";
@@ -9,28 +10,28 @@ export interface InputProps
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
-    const radius = 100; // change this to increase the rdaius of the hover effect
+    const radius = 100; // Increase this to expand the hover effect radius
     const [visible, setVisible] = React.useState(false);
 
-    let mouseX = useMotionValue(0);
-    let mouseY = useMotionValue(0);
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
 
-    function handleMouseMove({ currentTarget, clientX, clientY }: any) {
-      let { left, top } = currentTarget.getBoundingClientRect();
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+      const { left, top } = event.currentTarget.getBoundingClientRect();
+      mouseX.set(event.clientX - left);
+      mouseY.set(event.clientY - top);
+    };
 
-      mouseX.set(clientX - left);
-      mouseY.set(clientY - top);
-    }
     return (
       <motion.div
         style={{
           background: useMotionTemplate`
-        radial-gradient(
-          ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
-          #5ddbff,
-          transparent 80%
-        )
-      `,
+            radial-gradient(
+              ${visible ? radius + "px" : "0px"} circle at ${mouseX}px ${mouseY}px,
+              #5ddbff,
+              transparent 80%
+            )
+          `,
         }}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setVisible(true)}
@@ -48,8 +49,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         />
       </motion.div>
     );
-  },
+  }
 );
+
 Input.displayName = "Input";
 
 export { Input };
