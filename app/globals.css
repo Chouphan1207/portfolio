@@ -67,7 +67,7 @@
   --ring: #4d9fe2;
 
   --title: #B7E0FF;
-  --description: #B6EADA;
+  --description: #e8fdfc;
 
   --grid: #0e0f11;
 }
@@ -193,6 +193,10 @@ body {
   --animate-third: moveInCircle 40s linear infinite;
   --animate-fourth: moveHorizontal 40s ease infinite;
   --animate-fifth: moveInCircle 20s ease infinite;
+  --shadow-input:
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 0px 0px 1px rgba(25, 28, 33, 0.08);
  
   @keyframes moveHorizontal {
     0% {
@@ -244,9 +248,9 @@ body {
   animation: scroll 40s linear infinite;
 }
 
-nextjs-portal {
+/* nextjs-portal {
   display: none;
-}
+} */
 
 .mask-fade {
   -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
