@@ -14,6 +14,7 @@ const LoadingIntro = () => {
   const intervalTime = 15
   const increment = (100 / loadingTime) * intervalTime
 
+  // Progress simulation
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
@@ -21,19 +22,6 @@ const LoadingIntro = () => {
         if (next >= 100) {
           clearInterval(timer)
           setIsCompleted(true)
-
-          // ✅ Immediately mark loading as done
-          markLoadingDone()
-
-          // Continue backdrop and exit animations
-          setTimeout(() => {
-            setBackdropCompleted(true)
-
-            setTimeout(() => {
-              setFullyDone(true)
-            }, 700)
-          }, 500)
-
           return 100
         }
         return next
@@ -41,7 +29,27 @@ const LoadingIntro = () => {
     }, intervalTime)
 
     return () => clearInterval(timer)
-  }, [increment, markLoadingDone])
+  }, [increment])
+
+  // Trigger state transitions once loading completes
+  useEffect(() => {
+    if (isCompleted) {
+      // Safely call context state update
+      markLoadingDone()
+
+      const backdropTimer = setTimeout(() => {
+        setBackdropCompleted(true)
+
+        const doneTimer = setTimeout(() => {
+          setFullyDone(true)
+        }, 700)
+
+        return () => clearTimeout(doneTimer)
+      }, 500)
+
+      return () => clearTimeout(backdropTimer)
+    }
+  }, [isCompleted, markLoadingDone])
 
   if (fullyDone) return null
 
@@ -64,7 +72,7 @@ const LoadingIntro = () => {
           Inspirux is loading...
         </div>
 
-        <div className="absolute right-4 -bottom-15 text-white font-light text-[160px]">
+        <div className="absolute right-4 -bottom-15 text-white font-light text-[160px] md:text-[250px]">
           {Math.round(progress)}%
         </div>
       </div>
