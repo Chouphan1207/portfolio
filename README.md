@@ -1,4 +1,4 @@
-# 🧠 Ted’s Portfolio — Freshly crafted with Next.js & Tailwind CSS
+ # 🧠 Ted’s Portfolio — Freshly crafted with Next.js & Tailwind CSS
 
 A fresh, modern developer portfolio built with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and TypeScript — showcasing projects, experience, and a unique design aesthetic with cyan-themed palettes.
 
