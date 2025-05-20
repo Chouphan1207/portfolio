@@ -36,19 +36,19 @@ const ContactPage = () => {
       {/* Info Boxes */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-10">
         <div>
-          <h3 className="text- font-semibold mb-2">Available for Work</h3>
+          <h3 className="text-xl font-semibold mb-2">Available for Work</h3>
           <p className="text-sm text-neutral-500 mb-1">
             I&apos;m currently open to freelance or full-time opportunities.
           </p>
           <a
             href="mailto:chouphan1207@gmail.com"
-            className="text-description hover:underline text-sm"
+            className="text-description hover:underline text-"
           >
             chouphan1207@gmail.com
           </a>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Skills & Expertise</h3>
+          <h3 className="text-xl font-semibold mb-2">Skills & Expertise</h3>
           <p className="text-sm text-neutral-500 mb-1">
             React, Next.js, Tailwind CSS, UI/UX, Motion Design & more.
           </p>
@@ -62,7 +62,7 @@ const ContactPage = () => {
           </a>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Let&apos;s Connect</h3>
+          <h3 className="text-xl font-semibold mb-2">Let&apos;s Connect</h3>
           <p className="text-sm text-neutral-500 mb-1">
             I&apos;m always excited to explore creative projects.
           </p>
