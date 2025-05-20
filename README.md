@@ -1,4 +1,4 @@
-# 🧠 Ted’s Portfolio — Freshly crafted with Next.js & Tailwind CSS
+ # 🧠 Ted’s Portfolio — Freshly crafted with Next.js & Tailwind CSS
 
 A fresh, modern developer portfolio built with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and TypeScript — showcasing projects, experience, and a unique design aesthetic with cyan-themed palettes.
 
@@ -31,7 +31,6 @@ A fresh, modern developer portfolio built with [Next.js](https://nextjs.org), [T
 ---
 
 ## 📂 Project Structure
-
 /
 ├── app/ # App directory (Next.js routing)
 ├── components/ # Reusable UI components
@@ -39,10 +38,6 @@ A fresh, modern developer portfolio built with [Next.js](https://nextjs.org), [T
 ├── public/ # Static assets (images, icons)
 ├── styles/ # Global styles + theme setup
 └── tailwind.config.ts # Tailwind + OKLCH color theming
-
-yaml
-Copy
-Edit
 
 ---
 
@@ -66,13 +61,9 @@ Want to collaborate or connect?
 
 📨 Reach out via the contact form on the site
 📧 Or email me at: chouphan1207@gmail.com
-
 📄 License
 This project is open-sourced under the MIT License.
 
-vbnet
-Copy
-Edit
 
 Let me know if you'd like me to:
 - Insert real screenshots,
