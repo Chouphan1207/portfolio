@@ -1,6 +1,6 @@
-# 🧠 Ted’s Portfolio — Crafted with Next.js & Tailwind CSS
+# 🧠 Ted’s Portfolio — Freshly crafted with Next.js & Tailwind CSS
 
-A sleek, modern developer portfolio built with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and TypeScript — showcasing projects, experience, and a unique design aesthetic inspired by modern metal and blue-themed palettes.
+A fresh, modern developer portfolio built with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and TypeScript — showcasing projects, experience, and a unique design aesthetic with cyan-themed palettes.
 
 > 🔗 Live Site: [tedsportfolio.vercel.app](https://tedsportfolio.vercel.app)
 
@@ -61,14 +61,11 @@ npm run dev
 http://localhost:3000
 You can begin editing the homepage in app/page.tsx.
 
-📸 Screenshots
-Add screenshots or GIFs of your homepage, project section, and contact page here.
-
 📬 Contact
 Want to collaborate or connect?
 
 📨 Reach out via the contact form on the site
-📧 Or email me at: your.email@example.com
+📧 Or email me at: chouphan1207@gmail.com
 
 📄 License
 This project is open-sourced under the MIT License.
@@ -78,6 +75,6 @@ Copy
 Edit
 
 Let me know if you'd like me to:
-- Insert real screenshots (you can upload them here),
+- Insert real screenshots,
 - Add a custom license section,
 - Replace the placeholder email with your real one.
