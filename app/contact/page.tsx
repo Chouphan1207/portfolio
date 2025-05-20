@@ -6,11 +6,11 @@ const ContactPage = () => {
     <div className="min-h-screen bg-primary text-title py-25 justify-between">
       {/* Header Section */}
       <div className="text-center mb-12">
-        <p className="text-sm font-medium text-description mb-2">Contact Me</p>
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2">
+        <p className="text-lg font-medium text-description mb-2">Contact Me</p>
+        <h1 className="text-4xl sm:text-4xl font-bold mb-2">
           I&apos;d love to hear from you
         </h1>
-        <p className="text-sm text-neutral-500">
+        <p className="text-md text-neutral-500">
           I&apos;ll be flexible in Ho Chi Minh, Viet Nam
         </p>
       </div>
@@ -42,7 +42,7 @@ const ContactPage = () => {
           </p>
           <a
             href="mailto:chouphan1207@gmail.com"
-            className="text-description hover:underline text-"
+            className="text-description hover:underline text-md"
           >
             chouphan1207@gmail.com
           </a>
@@ -54,7 +54,7 @@ const ContactPage = () => {
           </p>
           <a
             href="https://drive.google.com/file/d/16_KDCjM10A5jgRFTQKvMYIt_LVXsa6T2/view?usp=drive_link"
-            className="text-description hover:underline text-sm"
+            className="text-description hover:underline text-md"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +68,7 @@ const ContactPage = () => {
           </p>
           <a
             href="https://www.linkedin.com/in/tin-phan-hoang-trong-110a2422a/"
-            className="text-description hover:underline text-sm"
+            className="text-description hover:underline text-md"
             target="_blank"
             rel="noopener noreferrer"
           >
