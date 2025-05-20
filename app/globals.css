@@ -260,3 +260,20 @@ body {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+
+@layer utilities {
+  .animate-slide-left {
+    animation: slideLeft 1.5s ease-out forwards;
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-0%);
+      opacity: 1;
+    }
+  }
+}

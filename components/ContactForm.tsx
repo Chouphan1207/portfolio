@@ -18,9 +18,9 @@ export function ContactForm() {
     console.log("Form submitted");
   };
   return (
-    <div className="shadow-input bg-[#101319] p-4 md:rounded-2xl md:p-8 w-full">
+    <div className="shadow-input md:bg-[#9FB3DF] p-2 md:rounded-2xl md:p-8 w-full lg:w-100 z-10">
       <form className="my-8" onSubmit={handleSubmit}>
-        <div className="mb-4 flex flex-col gap-3 space-y-2 md:flex-row md:space-y-0 md:space-x-2 text-[#dbecfe]">
+        <div className="mb-4 flex flex-col gap-1 space-y-2 md:flex-row md:space-y-0 text-primary">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
             <Input id="firstname" placeholder="Tin" type="text" />
@@ -30,15 +30,15 @@ export function ContactForm() {
             <Input id="lastname" placeholder="Phan Hoang Trong" type="text" />
           </LabelInputContainer>
         </div>
-        <LabelInputContainer className="mb-4 text-[#dbecfe]">
+        <LabelInputContainer className="mb-4 text-primary">
           <Label htmlFor="email">Email Address</Label>
           <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
         </LabelInputContainer>
-        <LabelInputContainer className="mb-4 text-[#dbecfe]">
+        <LabelInputContainer className="mb-4 text-primary">
           <Label htmlFor="password">Phone Number</Label>
           <Input id="password" placeholder="" type="phone" />
         </LabelInputContainer>
-        <LabelInputContainer className="mb-8 text-[#dbecfe]">
+        <LabelInputContainer className="mb-8 text-primary">
           <Label htmlFor="message">Message</Label>
           <Textarea
             id="Message"
@@ -96,8 +96,8 @@ export function ContactForm() {
 const BottomGradient = () => {
   return (
     <>
-      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-10 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-800 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-20 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-700 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
     </>
   );
 };

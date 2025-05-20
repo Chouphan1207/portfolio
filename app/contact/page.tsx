@@ -14,63 +14,65 @@ const ContactPage = () => {
           I&apos;ll be flexible in Ho Chi Minh, Viet Nam
         </p>
       </div>
- 
-        <div className="flex flex-col md:flex-row justify-center items-center">
-             {/* Map Section */}
-              <div className="hidden md:block w-190 h-190 py-5">
-                <img
-                  src="/maplg.png"
-                  alt="World map"
-                  className="w-full h-full rounded-xl"
-                />
-                <div className="absolute top-[33%] left-[46%]">
-                  <div className="w-8 h-8 bg-[var(--ring)] rounded-full shadow-md animate-ping" />
-                  <div className="w-4 h-4 bg-[var(--accent)] border-5 border-b-blue-950 rounded-full absolute top-2 left-2" />
-                </div>
-              </div>
 
-                <div>
-                  <ContactForm/>
-                </div>
-
+      <div className="flex flex-col md:flex-row justify-center items-center relative">
+        {/* Map Section */}
+        <div className="hidden lg:block relative w-full h-[700px] overflow-hidden py-5 z-0 animate-slide-left">
+          <img
+            src="/maplg.png"
+            alt="World map"
+            className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+          />
+          <div className="absolute top-[33%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+            <div className="w-8 h-8 bg-[var(--ring)] rounded-full shadow-md animate-ping" />
+            <div className="w-4 h-4 bg-[var(--accent)] border-b-4 border-blue-950 rounded-full absolute top-2 left-2" />
+          </div>
+        </div>
+        <div className="w-full md:w-1/2 bg-background p-8md:p-0 z-20">
+          <ContactForm />
+        </div>
       </div>
 
       {/* Info Boxes */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-10">
         <div>
-          <h3 className="text-lg font-semibold mb-2">Support</h3>
+          <h3 className="text- font-semibold mb-2">Available for Work</h3>
           <p className="text-sm text-neutral-500 mb-1">
-            Our friendly team is here to help.
+            I&apos;m currently open to freelance or full-time opportunities.
           </p>
           <a
-            href="mailto:support@untitledui.com"
+            href="mailto:chouphan1207@gmail.com"
             className="text-description hover:underline text-sm"
           >
-            support@untitledui.com
+            chouphan1207@gmail.com
           </a>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Sales</h3>
+          <h3 className="text-lg font-semibold mb-2">Skills & Expertise</h3>
           <p className="text-sm text-neutral-500 mb-1">
-            Questions or queries? Get in touch!
+            React, Next.js, Tailwind CSS, UI/UX, Motion Design & more.
           </p>
           <a
-            href="mailto:sales@untitledui.com"
+            href="https://drive.google.com/file/d/16_KDCjM10A5jgRFTQKvMYIt_LVXsa6T2/view?usp=drive_link"
             className="text-description hover:underline text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            sales@untitledui.com
+            View My Resume
           </a>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-2">Phone</h3>
+          <h3 className="text-lg font-semibold mb-2">Let&apos;s Connect</h3>
           <p className="text-sm text-neutral-500 mb-1">
-            Mon–Fri from 8am to 5pm.
+            I&apos;m always excited to explore creative projects.
           </p>
           <a
-            href="tel:+16560000000"
+            href="https://www.linkedin.com/in/tin-phan-hoang-trong-110a2422a/"
             className="text-description hover:underline text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            +1 (656) 000-0000
+            LinkedIn Profile
           </a>
         </div>
       </div>
