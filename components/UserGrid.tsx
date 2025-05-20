@@ -9,11 +9,13 @@ import { signOutUser } from '@/redux/slices/userSlice'
 import SignInModal from '@/app/blog/modals/SignInModal'
 import { AppDispatch ,RootState } from '@/redux/store'
 import { closeSignInModal, closeSignUpModal } from '@/redux/slices/modalSlice'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 const UserGrid = () => {
-  const dispatch: AppDispatch  = useDispatch()
+  const dispatch: AppDispatch = useDispatch()
   const user = useSelector((state: RootState) => state.user)
-
+  const router = useRouter()
 
 
   const handleSignOut = async () => {
@@ -25,7 +27,11 @@ const UserGrid = () => {
     console.log("logged out")
   }
 
-
+  useEffect(() => {
+    if (user.username) {
+      router.refresh()
+    }
+  }, [user.username])
 
   if (!user.username) {
     return (

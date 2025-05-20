@@ -73,7 +73,7 @@ export default function SignInModal() {
                 </div>   
             </div> 
             <button
-                className='bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition'
+                className='bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition hover:'
                 onClick={() => handleLogin()}>
                 Login
             </button>

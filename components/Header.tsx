@@ -15,18 +15,20 @@ const Header = () => {
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    if (!isLoadingDone) return;
+useEffect(() => {
+  if (!isLoadingDone) return;
 
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (Math.abs(currentScrollY - lastScrollY) > 10) {
       setHidden(currentScrollY > lastScrollY && currentScrollY > 80);
       setLastScrollY(currentScrollY);
-    };
+    }
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY, isLoadingDone]);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [lastScrollY, isLoadingDone]);
 
   return (
     <AnimatePresence>
@@ -36,9 +38,8 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className={`fixed top-0 w-full z-[9999] ${
-            hidden ? '-translate-y-full' : 'translate-y-0'
-          }`}
+          className={`fixed top-0 w-full z-[9999] transform transition-transform duration-500 ease-in-out ${hidden ? '-translate-y-full' : 'translate-y-0'}`}
+
         >
           <div className='py-5 w-full flex justify-center items-center bg-background/70 backdrop-blur-md shadow-md h-20'>
             <div className='w-full md:px-1 max-w-screen-xl mx-auto'>
