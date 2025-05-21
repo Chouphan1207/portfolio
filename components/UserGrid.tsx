@@ -3,13 +3,12 @@
 import { auth } from '@/firebase'
 import { signOut } from 'firebase/auth'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { signOutUser } from '@/redux/slices/userSlice'
 import SignInModal from '@/app/blog/modals/SignInModal'
-import { AppDispatch ,RootState } from '@/redux/store'
+import { AppDispatch, RootState } from '@/redux/store'
 import { closeSignInModal, closeSignUpModal } from '@/redux/slices/modalSlice'
-import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 const UserGrid = () => {
@@ -17,14 +16,12 @@ const UserGrid = () => {
   const user = useSelector((state: RootState) => state.user)
   const router = useRouter()
 
-
   const handleSignOut = async () => {
     await signOut(auth)
     dispatch(signOutUser())
-
     dispatch(closeSignUpModal())
     dispatch(closeSignInModal())
-    console.log("logged out")
+    router.refresh()
   }
 
   useEffect(() => {
@@ -35,15 +32,17 @@ const UserGrid = () => {
 
   if (!user.username) {
     return (
-      <div className='bg-[var(--muted-foreground)] rounded-full w-[80px] h-[48px] md:w-[80px] md:h-[40px]'>
-        <SignInModal/>
+      <div className="bg-[var(--muted-foreground)] rounded-full w-[80px] h-[48px] md:w-[80px] md:h-[40px]">
+        <SignInModal />
       </div>
     )
   }
 
   return (
-    <div className="group relative flex items-center rounded-full bg-[var(--input)] hover:bg-[var(--card)] hover:bg-opacity-50 p-2 pe-4 transition-colors duration-300 cursor-pointer overflow-hidden w-fit
-    "        onClick={handleSignOut}>
+    <div
+      className="group relative flex items-center rounded-full bg-[var(--input)] hover:bg-[var(--card)] hover:bg-opacity-50 p-2 pe-4 transition-colors duration-300 cursor-pointer overflow-hidden w-fit"
+      onClick={handleSignOut}
+    >
       <Image
         src="/user.png"
         width={36}
@@ -77,7 +76,7 @@ const UserGrid = () => {
         "
       >
         <span className="font-bold text-ellipsis overflow-hidden">{user.name || 'Guest'}</span>
-        <span className="text-neutral-500 text-ellipsis overflow-hidden">@{user.username || 'Guest0000'}</span>
+        <span className="text-neutral-500 text-ellipsis overflow-hidden">@{user.username || 'guest0000'}</span>
       </div>
     </div>
   )
