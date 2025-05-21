@@ -23,18 +23,18 @@ const ContactPage = () => {
 
       <div className="flex flex-col md:flex-row justify-center items-center relative">
         {/* Map Section */}
-        <div className="hidden lg:block relative w-full h-[700px] overflow-hidden py-5 z-0 animate-slide-left">
+        <div className="hidden lg:block relative w-190 h-[650px] overflow-hidden py-5 z-0 animate-slide-left">
           <img
             src="/maplg.png"
             alt="World map"
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-xl"
+            className="absolute top-0 left-2 w-full h-full object-cover rounded-xl"
           />
-          <div className="absolute top-[33%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+          <div className="absolute top-[35%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10">
             <div className="w-8 h-8 bg-[var(--ring)] rounded-full shadow-md animate-ping" />
             <div className="w-4 h-4 bg-[var(--accent)] border-b-4 border-blue-950 rounded-full absolute top-2 left-2" />
           </div>
         </div>
-        <div className="w-full md:w-1/2 bg-background p-8md:p-0 z-20">
+        <div className="w-100 p-8 md:p-0 z-20">
           <ContactForm />
         </div>
       </div>

@@ -84,14 +84,14 @@ export default function SignInModal() {
               </div>
             </div>
             <button
-              className="bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition"
+              className="bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold transition-all duration-300 ease-in-out transform hover:bg-opacity-25 hover:scale-105 hover:shadow-lg"
               onClick={() => handleLogin(email, password)}
             >
               Login
             </button>
             <span className="my-3 text-sm text-center block">Or</span>
             <button
-              className="bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold hover:bg-opacity-25 transition"
+              className="bg-[var(--foreground)] text-[var(--background)] w-full h-[48px] rounded-full font-bold transition-all duration-300 ease-in-out transform hover:bg-opacity-25 hover:scale-105 hover:shadow-lg"
               onClick={() => handleLogin('Guest@gmail.com', '12345678')}
             >
               Log In as Guest

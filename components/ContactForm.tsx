@@ -18,7 +18,7 @@ export function ContactForm() {
     console.log("Form submitted");
   };
   return (
-    <div className="shadow-input md:bg-[#9FB3DF] p-2 md:rounded-2xl md:p-8 w-full lg:w-100 z-10">
+    <div className=" md:bg-[#428ea2] p-2 md:rounded-2xl md:p-8 w-full lg:w-100 z-10">
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="mb-4 flex flex-col gap-1 space-y-2 md:flex-row md:space-y-0 text-primary">
           <LabelInputContainer>
@@ -77,16 +77,7 @@ export function ContactForm() {
             </span>
             <BottomGradient />
           </button>
-          <button
-            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-            type="submit"
-          >
-            <IconBrandLinkedin className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-            <span className="text-sm text-neutral-700 dark:text-neutral-300">
-              Linkedin
-            </span>
-            <BottomGradient />
-          </button>
+        
         </div>
       </form>
     </div>
