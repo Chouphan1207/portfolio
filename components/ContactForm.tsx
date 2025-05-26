@@ -49,7 +49,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="md:bg-[#428ea2] p-2 md:rounded-2xl md:p-8 w-full lg:w-100 z-10">
+    <div className="md:bg-[#90daee] p-2 md:rounded-2xl md:p-8 w-full lg:w-100 z-10">
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="mb-4 flex flex-col gap-1 space-y-2 md:flex-row md:space-y-0 text-primary">
           <LabelInputContainer>
