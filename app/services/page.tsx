@@ -9,7 +9,7 @@ import { BackgroundBeams } from '@/components/ui/BackgroundBeam';
 const Services = () => {
   
   return (
-    <section className='min-h-[80vh] flex flex-col justify-center py-12'>
+    <section className='min-h-[80vh] flex flex-col justify-center items-center py-20'>
       <div className='container mx-auto py-20 px-4'>
         <motion.div
           initial={{ opacity: 0 }}

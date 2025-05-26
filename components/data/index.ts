@@ -75,25 +75,25 @@ export const services = [
   {
     id:"1",
     title: "Web Development",
-    description: "I create responsive and user-friendly websites using the latest technologies.",
+    description: "I build fast, responsive websites using modern technologies such as React, Next.js, and Node.js. Whether it's a marketing site, dashboard, or e-commerce platform, I ensure seamless performance, clean code, and maintainable architecture.",
     href: "",
   },
   {
     id:"2",
     title: "Mobile Development",
-    description: "I create responsive and user-friendly websites using the latest technologies.",
+    description: "I create robust mobile applications for both iOS and Android using tools like React Native and Flutter. My focus is on smooth performance, platform-native feel, and user-centered design that scales with your needs.",
     href: "",
   },
   {
     id:"3",
     title: "UX/UI Design",
-    description: "I create responsive and user-friendly websites using the latest technologies.",
+    description: "Crafting intuitive, elegant interfaces that prioritize user experience across web and mobile platforms. I focus on clean visual hierarchy, accessibility, and user flow to deliver high-impact design solutions.",
     href: "",
   },
   {
     id:"4",
     title: "Guitar Gigs",
-    description: "I create responsive and user-friendly websites using the latest technologies.",
+    description: "Available for live music events, private performances, and creative collaborations. I play a wide range of styles—from acoustic soul to electric rock—and tailor each session to fit the vibe and energy of your audience or event.",
     href: "",
   },
 ];

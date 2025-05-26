@@ -12,12 +12,12 @@ const ContactPage = () => {
             </div>
       {/* Header Section */}
       <div className="text-center mb-12">
-        <p className="text-lg font-medium text-description mb-2">Contact Me</p>
-        <h1 className="text-4xl sm:text-4xl font-bold mb-2">
+        <p className="text-2xl font-medium text-description mb-2">Contact Me</p>
+        <h1 className="text-4xl sm:text-6xl font-bold mb-2">
           I&apos;d love to hear from you
         </h1>
-        <p className="text-md text-neutral-500">
-          I&apos;ll be flexible in Ho Chi Minh, Viet Nam
+        <p className="text-xl text-neutral-500">
+          I&apos;ll be available in July 2025 in Ho Chi Minh City, Vietnam.
         </p>
       </div>
 

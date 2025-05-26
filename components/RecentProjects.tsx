@@ -102,7 +102,7 @@ export function RecentProjects() {
       title: "Present",
       content: (
         <div>
-          <p className="mb-4 text-xl font-normal text-title">
+          <p className="mb-4 text-2xl font-bold text-title">
             Wrapping up my military service and diving back into web development. I&apos;ve been refreshing my skills and am now looking for opportunities where I can keep learning, grow as a developer, and contribute to a team. I&apos;m ready, motivated, and excited for what&apos;s next.
           </p>
 
