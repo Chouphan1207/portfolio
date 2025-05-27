@@ -5,13 +5,13 @@ import { Spotlight } from '@/components/ui/Spotlight';
 const ContactPage = () => {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-primary text-title py-25">
-            <div>
-              <Spotlight className=" -top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="#3fc1c0" />
-              <Spotlight className=" -top-10 left-[80%] h-[80vh] w-[40vw]" fill="#0899ba" />
-              <Spotlight className=" top-28 left-80 h-[80vh] w-[50vw]" fill="#1c558e" />
-            </div>
+      <div className="relative w-full h-full">
+        <Spotlight className=" -top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="#3fc1c0" />
+        <Spotlight className=" -top-10 left-[80%] h-[80vh] w-[40vw]" fill="#0899ba" />
+        <Spotlight className=" top-28 left-80 h-[80vh] w-[50vw]" fill="#1c558e" />
+      </div>
       {/* Header Section */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 w-screen">
         <p className="text-2xl font-medium text-description mb-2">Contact Me</p>
         <h1 className="text-4xl sm:text-6xl font-bold mb-2">
           I&apos;d love to hear from you
