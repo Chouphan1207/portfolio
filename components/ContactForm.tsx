@@ -136,7 +136,7 @@ export function ContactForm() {
 
         <div className="flex flex-col space-y-4">
           <button
-            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626] transition duration-300 hover:brightness-150"
+            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gradient-to-br from-black to-neutral-900 px-4 font-medium text-black  dark:shadow-[0px_0px_1px_1px_#262626] transition duration-300 hover:brightness-150"
             type="button"
           >
             <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
