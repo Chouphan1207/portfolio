@@ -98,7 +98,7 @@ export function ContactForm() {
             type="email"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
-            placeholder="projectmayhem@fc.com"
+            placeholder="project@email.com"
           />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4 text-primary">
