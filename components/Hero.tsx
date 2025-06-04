@@ -28,7 +28,7 @@ const Hero = () => {
 
       {/* Hero Section */}
       <div className="relative flex mt-20 py-0 xs:py-2 sm:py-2 xs:w-full sm:w-full items-center justify-center overflow-hidden">
-        <div className="flex flex-col md:flex-row justify-center items-center max-w-7xl w-full mx-5">
+        <div className="flex flex-col md:flex-row justify-center items-center max-w-7xl w-full mx-10 xl:mx-20">
 
           {/* Left Column: Text Content */}
           <div className="flex-2 flex flex-col items-center md:items-start justify-center space-y-4 order-2 xl:order-none">
